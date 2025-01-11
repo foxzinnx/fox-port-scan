@@ -19,7 +19,7 @@ def main_menu():
 def scan(ip, output_file=None):
     results = []
     print(f"\n{Fore.CYAN}Scanning target: {ip}")
-    for ports in range(1, 65):
+    for ports in range(1, 65536): #Change the port limit if you want
         try:
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.settimeout(0.5)
